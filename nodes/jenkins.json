@@ -1,3 +1,7 @@
 {
-	"run_list": "role[jenkins]"
+	"run_list": [
+		"recipe[addusers]",
+		"recipe[server_settings]",
+		"role[jenkins]"
+	]
 }

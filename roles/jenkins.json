@@ -14,8 +14,6 @@
 	"json_class": "Chef::Role",
 	"run_list" : [
 		"recipe[java]",
-		"recipe[server_settings]",
-		"recipe[addusers]",
 		"recipe[jenkins]"
 	]
 }
