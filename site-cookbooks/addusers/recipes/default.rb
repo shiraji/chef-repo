@@ -7,17 +7,14 @@
 # All rights reserved - Do Not Redistribute
 #
 
-users = node[:adduser]
-
 #それぞれのユーザを設定する。
-users.each { |username,user|
+node[:adduser].each { |username,user|
 	group user[:group][:name] do
 		append true
 		gid user[:group][:gid]
 		:create
 	end
 
-#	user "#{node.adduser.user1.name}" do
 	user user[:name] do
 		comment user[:comment]
 		uid user[:uid]
