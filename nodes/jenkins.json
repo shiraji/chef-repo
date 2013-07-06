@@ -1,6 +1,6 @@
 {
 	"run_list": [
-		"recipe[addusers]",
+		"role[adduser_shiraji]",
 		"recipe[server_settings]",
 		"role[jenkins]"
 	]
