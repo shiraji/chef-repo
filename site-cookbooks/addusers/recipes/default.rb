@@ -42,12 +42,12 @@ end
 # authorized_keysの中身を作成する
 begin
 	c = File.read("/home/" + node[:adduser][:name] + "/.ssh/authorized_keys")
-	c += "\n"
+	c += "\N"
 rescue
 	c = ""
 end
 
-node[:adduser][:user1][:ssh_rsa].each do |ssh_key|
+node[:adduser][:ssh_rsa].each do |ssh_key|
 	c += ssh_key
 	c += "\n"
 end
@@ -59,4 +59,3 @@ file "/home/" + node[:adduser][:name] + "/.ssh/authorized_keys" do
 		content c
 		action :create_if_missing
 end
-}
