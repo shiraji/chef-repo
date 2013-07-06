@@ -12,39 +12,40 @@ users = node[:adduser]
 #それぞれのユーザを設定する。
 users.each { |username,user|
 	group user[:group][:name] do
-			append true
-			gid user[:group][:gid]
-			:create
+		append true
+		gid user[:group][:gid]
+		:create
 	end
 
-	user "#{node.adduser.user1.name}" do
-			comment "#{node.adduser.user1.comment}"
-			uid #{node.adduser.user1.uid}
-			gid "#{node.adduser.user1.name}"
-			home "/home/#{node.adduser.user1.name}"
-			shell "#{node.adduser.user1.shell}"
-			username "#{node.adduser.user1.name}"
+#	user "#{node.adduser.user1.name}" do
+	user user[:name] do
+		comment user[:comment]
+		uid user[:uid]
+		gid user[:name]
+		home "/home/" + user[:name]
+		shell user[:shell]
+		username user[:name]
 	end
 
-	if #{node.adduser.user1.addToWheel}
+	if user[:addToWheel]
 		group "wheel" do
-				append true
-				members "#{node.adduser.user1.name}"
-				system true
-				:modify
+			append true
+			members user[:name]
+			system true
+			:modify
 		end
 	end
 
-	directory "/home/#{node.adduser.user1.name}/.ssh/" do
-		owner "#{node.adduser.user1.name}"
-		group "#{node.adduser.user1.group.name}"
+	directory "/home/" + user[:name] + "/.ssh/" do
+		owner user[:name]
+		group user[:group][:name]
 		mode "00755"
 		action :create
 	end
 
 	# authorized_keysの中身を作成する
 	begin
-		c = File.read("/home/#{node.adduser.user1.name}/.ssh/authorized_keys")
+		c = File.read("/home/" + user[:name] + "/.ssh/authorized_keys")
 		c += "\n"
 	rescue
 		c = ""
@@ -55,9 +56,9 @@ users.each { |username,user|
 		c += "\n"
 	end
 
-	file "/home/#{node.adduser.user1.name}/.ssh/authorized_keys" do
-			owner "#{node.adduser.user1.name}"
-			group "#{node.adduser.user1.group.name}"
+	file "/home/" + user[:name] + "/.ssh/authorized_keys" do
+			owner user[:name]
+			group user[:group][:name]
 			mode "0600"
 			content c
 			action :create_if_missing
