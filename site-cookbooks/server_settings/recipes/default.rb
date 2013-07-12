@@ -45,7 +45,7 @@ service "sshd" do
 end
 
 #yumでパッケージのインストール
-%w( screen zsh iptables ).each do |name|
+%w( screen zsh iptables tmux ).each do |name|
 	package name do
 		action :install
 	end
