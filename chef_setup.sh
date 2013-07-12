@@ -1,5 +1,9 @@
 #!/bin/sh
 {
+
+_current_file=`readlink -f $0`
+_current_dir=`dirname $_current_file`
+
 srcDir="/usr/local/src"
 installDir="/usr/local"
 
@@ -94,5 +98,9 @@ knife -v
 
 echo "*** berks -v ***"
 berks -v
+
+#install cookbooks
+cd $_current_dir
+berks install --path cookbook
 
 } > setup.log
