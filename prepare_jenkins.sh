@@ -1,10 +1,5 @@
-# move to .
-_current_file=`readlink -f $0`
-_current_dir=`dirname $_current_file`
-cd $_current_dir
-
 # intall cookbooks
-berks install --path cookbooks
+bash install_cookbook.sh
 
 # run chef-solo
 if [ "$?" = "0" ]; then
