@@ -99,8 +99,4 @@ knife -v
 echo "*** berks -v ***"
 berks -v
 
-#install cookbooks
-cd $_current_dir
-berks install --path cookbook
-
 } > setup.log
