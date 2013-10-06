@@ -1,7 +1,8 @@
 {
-	"run_list": [
-		"role[adduser_shiraji]",
-		"recipe[server_settings]",
-		"role[jenkins]"
-	]
+  "run_list": [
+    "role[adduser_shiraji]",
+    "recipe[server_settings]",
+    "role[jenkins]",
+    "role[jenkins_autorun]"
+  ]
 }
