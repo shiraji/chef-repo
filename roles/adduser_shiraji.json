@@ -11,7 +11,8 @@
 			"uid": 10000,
 			"shell": "/bin/zsh",
 			"ssh_rsa": [
-				"ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAgGB/bZrITA6T1+fwFZApsQnK6CyGJZQsyNBoJVrcbunz7he6zHViOeqAwlLWuSf9bObScvdWD+mqzf18HmXsCMI/9kpyHLs6vPylSOeCeJY/Bn/gK8NRCxsCeniA8ZSkJ57j+hmq9j/Ci6sa+a1ytGpjAj+TwijWsy9KE1vuaQk="
+				"ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAgGB/bZrITA6T1+fwFZApsQnK6CyGJZQsyNBoJVrcbunz7he6zHViOeqAwlLWuSf9bObScvdWD+mqzf18HmXsCMI/9kpyHLs6vPylSOeCeJY/Bn/gK8NRCxsCeniA8ZSkJ57j+hmq9j/Ci6sa+a1ytGpjAj+TwijWsy9KE1vuaQk=",
+        "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJ+uQaC6AFZ04SDU1GNCNpcVKYjqkwxFEPipjFMJxoIXnsJdNArtRgRVJEnCVpRawGXNuVLRK4dpGlffKVV+BnKim/aAkh9Bj6mtuYqb6T77jO+ZVETTSO4HOwGsKJef7DiAU253Qk5pme6dq0tsvtW0lD7i9/dM/gG9gLVmnETbUDqik850GGqW0qbM39GGqKIOqw0YZugsRlxLCOifNPVua5XgjqCTyfUF1ljC6uRxqBnkHEhHushk2FEXz3S8tgCPN8wkpCL/WQaBfzvsoo95wzoVQnhSRqZKy/t5bUWsFmLruPcjtUyEYA04ySAtbCd48DCoDtLY7PQLf0pC7P"
 			],
 			"addToWheel": true
 		}
